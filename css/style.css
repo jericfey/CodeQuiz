@@ -1,0 +1,41 @@
+p {
+  font-size: 16px;
+}
+
+/* responsive background image */
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../assets/MtErebus.jpg");
+  overflow-x: hidden;
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-form {
+  margin-top: 100px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  margin-top: 100px;
+}
+
+/* footer gradiant */
+#grad1 {
+  height: 75px;
+  background-color: #cccccc;
+  background-image: radial-gradient(Blue, purple);
+}
+
+.btn-footer {
+  font-size: 3rem;
+}
