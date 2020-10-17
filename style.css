@@ -1,0 +1,10 @@
+/* footer gradiant */
+#grad1 {
+  height: 75px;
+  background-color: #cccccc;
+  background-image: radial-gradient(Blue, purple);
+}
+
+.btn-footer {
+  font-size: 3rem;
+}
