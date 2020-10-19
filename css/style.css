@@ -21,11 +21,24 @@ html {
   background-size: cover;
 }
 
-.contact-form {
+ .contact-form {
   margin-top: 100px;
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+ .container {
+  margin-top: 100px;
+} 
+
+.pb-3,
+.py-3 {
+  margin-top: 100px;
+} 
+
+element.style {
+    margin-top: 100px;
+}
+
+#card {
   margin-top: 100px;
 }
 
