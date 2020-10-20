@@ -61,8 +61,11 @@ function buildQuiz() {
     //add this question and answers to the output array using template literal again and embedded expression like join
     //the join expression takes the answers and puts them in a string to push to the answers div on the page
     output.push(
-      `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>`
+      //added div element with class > slide to hold question and answer containers
+      `<div class="slide">
+        <div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join("")} </div>
+       </div>`
     );
   });
   //combine output list into one string of HTML and print to screen
@@ -84,7 +87,7 @@ function showResults() {
     const selector = `input[name=question${questionNumber}]:checked`;
     //using querySelector to search CSS for defined answerContainer and get the value
     // OR (|| {}) (empty object) is used in case a question is left blank and not answered instead of showing an error
-    //The value with either be the user's answer or undefined and can skip question 
+    //The value with either be the user's answer or undefined and can skip question
 
     // if answer is correct
     if (userAnswer === currentQuestion.correctAnswer) {
@@ -103,8 +106,56 @@ function showResults() {
   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 }
 
-// display quiz right away
+//Play the quiz!
 buildQuiz();
 
+//Pagination - variables to store references to navigation buttons and keep track of slide position
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+//manages question/answer slide activity
+function showSlide(n) {
+  //by removing the active-slide class the current slide is hidden
+  slides[currentSlide].classList.remove("active-slide");
+  //by adding the active-slide class the current slide is displayed
+  slides[n].classList.add("active-slide");
+  //updates current slide number
+  currentSlide = n;
+
+  //if we are on the first slide, hide the previous slide button, otherwise show the button
+  if (currentSlide === 0) {
+    previousButton.style.display = "none";
+  } else {
+    previousButton.style.display = "inline-block";
+  }
+  //if we are on the last slide, hide the Next Slide button and show Submit, otherwise show Next slide
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = "none";
+    submitButton.style.display = "inline-block";
+  } else {
+    nextButton.style.display = "inline-block";
+    submitButton.style.display = "none";
+  }
+}
+
+//Show first slide
+showSlide(currentSlide);
+
+//make navigation buttons work using showSlide function to make the buttons show the previous or next slide
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}
+
+//EVENT LISTENERS
 // on submit, show results
 submitButton.addEventListener("click", showResults);
+//Show previous slide button
+previousButton.addEventListener("click", showPreviousSlide);
+//show next slide button
+nextButton.addEventListener("click", showNextSlide);
