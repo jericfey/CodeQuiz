@@ -8,6 +8,11 @@ html {
   height: 100%;
 }
 
+.navbar {
+  background-color: #cccccc;
+  background-image: radial-gradient(Blue, purple);
+}
+
 .nav-item {
   padding-right: 100px;
 }
@@ -16,6 +21,8 @@ html {
   /* The image used */
   background-image: url("../assets/MtErebus.jpg");
   overflow-x: hidden;
+  background-color: #cccccc;
+  background-image: radial-gradient(Blue, purple);
   /* Full height */
   height: 100%;
 
@@ -46,26 +53,4 @@ html {
   margin-top: 100px;
 }
 
-/* .pb-3,
-.py-3 {
-  margin-top: 100px;
-} */
 
-element.style {
-  margin-top: 100px;
-}
-
-#card {
-  margin-top: 100px;
-}
-
-/* footer gradiant */
-#grad1 {
-  height: 75px;
-  background-color: #cccccc;
-  background-image: radial-gradient(Blue, purple);
-}
-
-.btn-footer {
-  font-size: 3rem;
-}
