@@ -40,6 +40,10 @@ html {
   margin-top: 50px;
 }
 
+.timer {
+  padding-left: 20px;
+}
+
 .btn {
   margin-top: 50px;
   float: right;
@@ -54,7 +58,7 @@ html {
 }
 
 /* Quiz container CSS */
-.slide{
+.slide {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -63,13 +67,12 @@ html {
   opacity: 0;
   transition: opacity 0.5s;
 }
-.active-slide{
+.active-slide {
   opacity: 1;
   z-index: 2;
 }
-.quiz-container{
+.quiz-container {
   position: relative;
   height: 200px;
   margin-top: 40px;
 }
-

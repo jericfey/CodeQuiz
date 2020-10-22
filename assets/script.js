@@ -152,27 +152,40 @@ function showPreviousSlide() {
 }
 
 //EVENT LISTENERS
-document.addEventListener("DOMContentLoaded", () => {
-  const timeLeftDisplay = document.querySelector("#timer");
-  const startBtn = document.querySelector("#start");
-  let timLeft = 90;
-
-  function countDown() {
-    setInterval(function () {
-      if (timeLeft <= 0) {
-        clearInterval((timeLeft = 0));
-      }
-      timeLeftDisplay.innerHTML = timeLeft;
-      timeLeft -= 1;
-    }, 1000);
-  }
-});
-
 // on submit, show results
 submitButton.addEventListener("click", showResults);
 //Show previous slide button
 previousButton.addEventListener("click", showPreviousSlide);
 //show next slide button
 nextButton.addEventListener("click", showNextSlide);
-//start timer countdown on Start Quiz
-startButton.addEventListener("click", countDown);
+var interval;
+
+function countdown() {
+  clearInterval(interval);
+  interval = setInterval(function () {
+    var timer = $(".timer").html();
+    timer = timer.split(":");
+    var minutes = timer[0];
+    var seconds = timer[1];
+    seconds -= 1;
+    if (minutes < 0) return;
+    else if (seconds < 0 && minutes != 0) {
+      minutes -= 0;
+      seconds = 90;
+    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
+
+    $(".timer").html(minutes + ":" + seconds);
+
+    if (minutes == 0 && seconds == 0) clearInterval(interval);
+  }, 1000);
+}
+
+$("#start").click(function () {
+  $(".timer").text("0:90");
+  countdown();
+});
+
+$("#submit").click(function () {
+  $(".timer").text("0:00");
+  clearInterval(interval);
+});
