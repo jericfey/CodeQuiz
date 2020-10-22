@@ -35,41 +35,53 @@ const myQuestions = [
   },
 ];
 
-// Functions to build the quiz and show results
+//function to start the quiz
+function startQuiz() {
+  $("#start").click(function () {
+    $(".timer").text("2:00");
+    countdown();
+  });
 
-function buildQuiz() {
-  //variable to store the HTML output
-  //Consider variable like questionAnswers
-  const output = [];
+  $("#submit").click(function () {
+    $(".timer").text("2:00");
+    clearInterval(interval);
+  });
 
-  //For each question we get the current value and index (position in array)
-  myQuestions.forEach((currentQuestion, questionNumber) => {
-    // variable to store list of answers to the question
-    const answers = [];
+  // Functions to build the quiz and show results
+  function createQuiz() {
+    //variable to store the HTML output
+    //Consider variable like questionAnswers
+    const output = [];
 
-    //for loop to create each available answer as a label element using template literals
-    for (letter in currentQuestion.answers) {
-      //add an HTML Radio button
-      answers.push(
-        `<label>
+    //For each question we get the current value and index (position in array)
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // variable to store list of answers to the question
+      const answers = [];
+
+      //for loop to create each available answer as a label element using template literals
+      for (letter in currentQuestion.answers) {
+        //add an HTML Radio button
+        answers.push(
+          `<label>
                         <input type="radio" name="question${questionNumber}" value="${letter}">
                         ${letter} :
                         ${currentQuestion.answers[letter]}
                     </label>`
-      );
-    }
-    //add this question and answers to the output array using template literal again and embedded expression like join
-    //the join expression takes the answers and puts them in a string to push to the answers div on the page
-    output.push(
-      //added div element with class > slide to hold question and answer containers
-      `<div class="slide">
+        );
+      }
+      //add this question and answers to the output array using template literal again and embedded expression like join
+      //the join expression takes the answers and puts them in a string to push to the answers div on the page
+      output.push(
+        //added div element with class > slide to hold question and answer containers
+        `<div class="slide">
         <div class="question"> ${currentQuestion.question} </div>
         <div class="answers"> ${answers.join("")} </div>
        </div>`
-    );
-  });
-  //combine output list into one string of HTML and print to screen
-  quizContainer.innerHTML = output.join("");
+      );
+    });
+    //combine output list into one string of HTML and print to screen
+    quizContainer.innerHTML = output.join("");
+  }
 }
 
 function showResults() {
@@ -107,7 +119,7 @@ function showResults() {
 }
 
 //Play the quiz!
-buildQuiz();
+createQuiz();
 
 //Pagination - variables to store references to navigation buttons and keep track of slide position
 const previousButton = document.getElementById("previous");
@@ -153,6 +165,24 @@ function showPreviousSlide() {
 }
 
 //EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", () => {
+  const timeLeftDisplay = document.querySelector("#timer");
+  const startBtn = document.querySelector("start");
+  let timLeft = 90;
+
+  function countDown() {
+    setInterval(function () {
+      if (timeLeft <= 0) {
+        clearInterval((timeLeft = 0));
+      }
+      timeLeftDisplay.innerHTML = timeLeft;
+      timeLeft -= 1;
+    }, 1000);
+  }
+  startButton.addEventListener("click", countDown);
+});
+
+//
 // on submit, show results
 submitButton.addEventListener("click", showResults);
 //Show previous slide button
