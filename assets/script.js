@@ -160,6 +160,7 @@ previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 var interval;
 
+//Countdown timer to start when "start quiz" button is clicked
 function countdown() {
   clearInterval(interval);
   interval = setInterval(function () {
