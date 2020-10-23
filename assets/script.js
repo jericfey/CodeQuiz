@@ -33,6 +33,72 @@ const myQuestions = [
     },
     correctAnswer: "d",
   },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
+  {
+    question:
+      "Which tab in Chrome inspect allows you to see local storage content?",
+    answers: {
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
+    },
+    correctAnswer: "d",
+  },
 ];
 
 // Functions to build the quiz and show results
@@ -151,13 +217,6 @@ function showPreviousSlide() {
   showSlide(currentSlide - 1);
 }
 
-//EVENT LISTENERS
-// on submit, show results
-submitButton.addEventListener("click", showResults);
-//Show previous slide button
-previousButton.addEventListener("click", showPreviousSlide);
-//show next slide button
-nextButton.addEventListener("click", showNextSlide);
 var interval;
 
 //Countdown timer to start when "start quiz" button is clicked
@@ -174,9 +233,9 @@ function countdown() {
       minutes -= 00;
       seconds = 90;
     } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
-
+    
     $(".timer").html(minutes + ":" + seconds);
-
+    
     if (minutes == 0 && seconds == 0) clearInterval(interval);
   }, 1000);
 }
@@ -190,3 +249,11 @@ $("#submit").click(function () {
   $(".timer").text("0:00");
   clearInterval(interval);
 });
+
+//EVENT LISTENERS
+// on submit, show results
+submitButton.addEventListener("click", showResults);
+//Show previous slide button
+previousButton.addEventListener("click", showPreviousSlide);
+//show next slide button
+nextButton.addEventListener("click", showNextSlide);
