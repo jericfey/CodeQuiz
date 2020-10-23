@@ -34,70 +34,61 @@ const myQuestions = [
     correctAnswer: "d",
   },
   {
-    question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
+    question: "In what year was JavaScript invented?",
     answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
+      a: "1970 ",
+      b: "1982 ",
+      c: "1995 ",
+      d: "2010 ",
     },
-    correctAnswer: "d",
+    correctAnswer: "c",
+  },
+  {
+    question: "JavaScript is the default scripting language in HTML.",
+    answers: {
+      a: "True ",
+      b: "False ",
+    },
+    correctAnswer: "a",
   },
   {
     question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
+      "Which keyword in JavaScript marks a block of statements to be executed as long as a condition is true?",
     answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
+      a: "break ",
+      b: "continue ",
+      c: "for ",
+      d: "return ",
     },
-    correctAnswer: "d",
+    correctAnswer: "c",
   },
   {
     question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
+      "A keyword or reserved word can be used as a variable in JavaScript for specific occasions.",
     answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
+      a: "True ",
+      b: "False ",
     },
-    correctAnswer: "d",
+    correctAnswer: "b",
   },
   {
     question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
+      "In JavaScript the first character of an identifier must be a letter?",
     answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
+      a: "True ",
+      b: "False ",
     },
-    correctAnswer: "d",
+    correctAnswer: "b",
   },
   {
-    question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
+    question: "What is the name of a data type that only has two options?",
     answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
+      a: "String",
+      b: "Boolean ",
+      c: "Number ",
+      d: "Object ",
     },
-    correctAnswer: "d",
-  },
-  {
-    question:
-      "Which tab in Chrome inspect allows you to see local storage content?",
-    answers: {
-      a: "Console ",
-      b: "Elements ",
-      c: "Sources ",
-      d: "Application ",
-    },
-    correctAnswer: "d",
+    correctAnswer: "b",
   },
 ];
 
@@ -233,9 +224,9 @@ function countdown() {
       minutes -= 00;
       seconds = 90;
     } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
-    
+
     $(".timer").html(minutes + ":" + seconds);
-    
+
     if (minutes == 0 && seconds == 0) clearInterval(interval);
   }, 1000);
 }
