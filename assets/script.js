@@ -9,16 +9,16 @@ const myQuestions = [
     question:
       "In JavaScript, setInterval and setTimeout are both elements on the window dot object.",
     answers: {
-      a: "True",
-      b: "False",
+      a: "True ",
+      b: "False ",
     },
     correctAnswer: "a",
   },
   {
     question: "JavaScript is an event based language.",
     answers: {
-      a: "True",
-      b: "False",
+      a: "True ",
+      b: "False ",
     },
     correctAnswer: "a",
   },
@@ -26,10 +26,10 @@ const myQuestions = [
     question:
       "Which tab in Chrome inspect allows you to see local storage content?",
     answers: {
-      a: "Console",
-      b: "Elements",
-      c: "Sources",
-      d: "Application",
+      a: "Console ",
+      b: "Elements ",
+      c: "Sources ",
+      d: "Application ",
     },
     correctAnswer: "d",
   },
@@ -53,7 +53,7 @@ function createQuiz() {
         `<label>
                         <input type="radio" name="question${questionNumber}" value="${letter}">
                         ${letter} :
-                        ${currentQuestion.answers[letter]}
+                        ${currentQuestion.answers[letter]} \u00A0
                     </label>`
       );
     }

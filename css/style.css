@@ -40,6 +40,11 @@ html {
   margin-top: 50px;
 }
 
+.resultsContainer {
+  text-align: right;
+  padding-right: 100px;
+ }
+
 .timer {
   padding-left: 20px;
 }
