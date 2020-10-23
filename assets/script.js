@@ -171,7 +171,7 @@ function countdown() {
     seconds -= 1;
     if (minutes < 0) return;
     else if (seconds < 0 && minutes != 0) {
-      minutes -= 0;
+      minutes -= 00;
       seconds = 90;
     } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
 
