@@ -8,16 +8,15 @@
     <!-- Site Favicon -->
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
 
+    <!-- Reset CSS for any browser -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <!-- Add icon library -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <!-- Reset CSS for any browser -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <!-- Bootstrap CSS -->
-    
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -29,7 +28,7 @@
       crossorigin="anonymous"
     />
     <!-- Additional CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
 
     <title>Quiz Game</title>
   </head>
@@ -39,7 +38,10 @@
         <span class="w-100 d-lg-none d-block">
           <!-- hidden spacer to center brand on mobile --></span
         >
-        <a class="navbar-brand d-lg-inline-block" href="./index.html" style="color:white"
+        <a
+          class="navbar-brand d-lg-inline-block"
+          href="./index.html"
+          style="color: white"
           ><u>Back to Quiz</u>
         </a>
         <div class="w-100 text-right">
@@ -79,7 +81,31 @@
           <div class="col-md-12">
             <h1>High Score List:</h1>
 
-            <container>
+            <div class="card">
+              <h2>Enter your Initials Winner!</h2>
+              <form method="POST">
+                <div class="input-group">
+                  <label class="label" for="initials-input">Initials</label>
+                  <input
+                    type="text"
+                    name="initials-input"
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="initials-input"
+                    placeholder="ABC"
+                  />
+                </div>
+
+                <div id="msg"></div>
+                <button id="sign-up">Submit</button>
+              </form>
+              <div class="card">
+                <h2>Winner List:</h2>
+                <p><strong></strong> <span id="initials-list"></span></p>
+              </div>
+            </div>
+
+            <!-- <container>
               <strong>
                 <div class="form-group">
                   <label for="textArea1">Enter your initials</label>
@@ -89,6 +115,7 @@
                     id="textArea1"
                     placeholder="ABC"
                   />
+                  <div class="initials-input"></div>
  
                 <label class="form-group">
                   <label for="exampleFormControlSelect2"
@@ -109,7 +136,7 @@
 
               </strong>
               <input class="btn btn-primary" type="initials-submit" value="Submit" />
-            </container>
+            </container> -->
 
             <script
               src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -149,21 +176,21 @@
     </footer>
     <!-- JQuery CDN links -->
     <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
     ></script>
     <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
     ></script>
-    
+
     <!-- Bootstrap JavaScrip CDN -->
     <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
     ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="./assets/script1.js"></script>
