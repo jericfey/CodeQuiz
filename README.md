@@ -17,3 +17,4 @@ Usage:
 
 Screenshots:
 ![CodeQuiz Screenshot1](./assets/Screenshot1.jpg)
+![CodeQuiz Screenshot2](./assets/Screenshot2.jpg)
