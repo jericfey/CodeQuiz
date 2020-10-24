@@ -1,63 +1,46 @@
-// var m = 0;
-// var s = 0;
-// document.getElementById("timer").innerHTML = 002 + ":" + 00;
+const submit = document.querySelector(".initials-submit");
+const initialsList = document.querySelector(".initials");
+const initialsInput = document.querySelector(".initials-input");
 
-// function startTimer() {
-//   var presentTime = document.getElementById("timer").innerHTML;
-//   var timeArray = presentTime.split(/[:]+/);
-//   var m = timeArray[0];
-//   var s = checkSecond(timeArray[1] - 1);
-//   if (s == 59) {
-//     m = m - 1;
-//   }
-//   //if(m<0){alert('timer completed')}
-
-//   document.getElementById("timer").innerHTML = m + ":" + s;
-//   console.log(m);
-//   setTimeout(startTimer, 1000);
-// }
-// startTimer();
-
-// function checkSecond(sec) {
-//   if (sec < 10 && sec >= 0) {
-//     sec = "0" + sec;
-//   } // add zero in front of numbers < 10
-//   if (sec < 0) {
-//     sec = "59";
-//   }
-//   return sec;
-// }
-
-var interval;
-
-function countdown() {
-  clearInterval(interval);
-  interval = setInterval(function () {
-    var timer = $(".timer").html();
-    timer = timer.split(":");
-    var minutes = timer[0];
-    var seconds = timer[1];
-    seconds -= 1;
-    if (minutes < 0) return;
-    else if (seconds < 0 && minutes != 0) {
-      minutes -= 1;
-      seconds = 59;
-    } else if (seconds < 10 && length.seconds != 2) seconds = "0" + seconds;
-
-    $(".timer").html(minutes + ":" + seconds);
-
-    if (minutes == 0 && seconds == 0) clearInterval(interval);
-  }, 1000);
+function template(data) {
+  initialsList.insertAdjacentHTML(
+    "beforeend",
+    `
+  <div class="initials flex items-start justify-start">
+      <div class="flex-1">
+        <p class="initials-body">${data.initials}</p>
+      </div>
+    </div>
+  </div>`
+  );
 }
 
-$("#start").click(function () {
-  $(".timer").text("2:00");
-  countdown();
-});
+function appendInitials(event) {
+  const data = {
+    initials: initialsInput.value,
+  };
 
-$("#submit").click(function () {
-  $(".timer").text("2:00");
-  clearInterval(interval);
-});
-//start timer countdown on Start Quiz
-// startButton.addEventListener("click", startTimer);
+  event.preventDefault();
+  // If the value is nothing just return
+  if (initialsInput.value.length < 1) return;
+
+  // Insert new template into DOM
+  template(data);
+  console.log(data);
+
+  // Reset textarea value
+  initialsInput.value = "";
+
+  // Save the list to localStorage
+  localStorage.setItem("initialsListing", initialsList.innerHTML);
+}
+
+// submit.addEventListener("click", appendInitials, false);
+
+// Check for saved wishlist items
+const saved = localStorage.getItem("initialsListing");
+
+// If there are any saved items, update our list
+if (saved) {
+  initialsList.innerHTML = saved;
+}
