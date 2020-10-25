@@ -70,84 +70,66 @@
 
     <!-- For Responsive Background image -->
     <div class="bg">
-      <div class="clearfix">
+      <div class="row">
+        <div class="col-md-12"></div>
+      </div>
+      <!-- Overall Grid -->
+      <div id="card" class="container card bg-light pt-3 pb-3">
+        <!-- First Row -->
         <div class="row">
-          <div class="col-md-12"></div>
-        </div>
-        <!-- Overall Grid -->
-        <div id="card" class="container card bg-light pt-3 pb-3">
-          <!-- First Row -->
-          <div class="row">
-            <!-- One Column for the header -->
+          <!-- One Column for the header -->
+          <div class="col-md-12">
+            <h1>Code Quiz</h1>
             <div class="col-md-12">
-              <h1>Code Quiz</h1>
-              <div class="col-md-12">
-                <!-- Score Results -->
-                <div class="resultsContainer">
-                  Your Score:
-                  <div id="results"></div>
+              <!-- Score Results -->
+              <div class="resultsContainer">
+                Your Score:
+                <div id="results"></div>
+              </div>
+            </div>
+            <container>
+              <div class="form-group">
+                <strong>
+                  <label for="exampleFormControlTextarea1">Rules: </label>
+                </strong>
+                <div>
+                  Click "Start Quiz" to begin answering questions. You have 2
+                  minutes to answer as many questions as possible. If you get
+                  the answer wrong then 10 seconds will be removed from your
+                  total time. Good Luck!
                 </div>
               </div>
-              <container>
-                <div class="form-group">
-                  <strong>
-                    <label for="exampleFormControlTextarea1">Rules: </label>
-                  </strong>
-                  <div>
-                    Click "Start Quiz" to begin answering questions. You have 2
-                    minutes to answer as many questions as possible. If you get
-                    the answer wrong then 10 seconds will be removed from your
-                    total time. Good Luck!
-                  </div>
-                </div>
 
-                <!-- Quiz Container for questions, answers and navigation buttons -->
-                <div class="quiz-container">
-                  <div id="quiz"></div>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  aria-label="Left Align"
-                  id="start"
-                >
-                  <span class="fa fa-lg" aria-hidden="true"></span>
-                  Start Quiz
-                </button>
-                <button id="previous">Previous Question</button>
-                <button id="next">Next Question</button>
-                <button id="submit">Display Score</button>
-              </container>
+              <!-- Quiz Container for questions, answers and navigation buttons -->
+              <div class="quiz-container">
+                <div id="quiz"></div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-default"
+                aria-label="Left Align"
+                id="start"
+              >
+                <span class="fa fa-lg" aria-hidden="true"></span>
+                Start Quiz
+              </button>
+              <button id="previous">Previous Question</button>
+              <button id="next">Next Question</button>
+              <button id="submit">Display Score</button>
+            </container>
 
-              <script
-                src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                crossorigin="anonymous"
-              ></script>
-              <script
-                src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-                crossorigin="anonymous"
-              ></script>
-              <script
-                src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-                crossorigin="anonymous"
-              ></script>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="fixed-bottom align-center">
-      <div id="grad1" class="align-center text-center" style="color: white">
-        <nav
+              <nav
           class="justify-content-center navbar navbar-expand-lg navbar-light"
         >
           <span>
             <a
-              href="https://github.com/jericfey?tab=repositories/"
+              href="#"
               class="fa fa-battle-net btn-footer"
               target="_blank"
             ></a>
